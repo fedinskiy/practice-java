@@ -5,11 +5,11 @@ package hometask;
  */
 public class TwoCountersMain {
     public static void main(String[] args) {
-
+        final int countUntil=20;
         Thread thSec= new Thread(new Runnable() {
             public void run() {
                 Counter counter=new Counter();
-                for(int i=0;i<25;++i) {
+                for(int i=0;i<countUntil;++i) {
                     counter.countSeconds();
                 }
             }
@@ -17,21 +17,21 @@ public class TwoCountersMain {
         Thread th1= new Thread(new Runnable() {
             public void run() {
                 Counter counter=new Counter();
-                    counter.showSeconds(1,20);
+                    counter.showSeconds(1,countUntil);
 
             }
         });
         Thread th5= new Thread(new Runnable() {
             public void run() {
                 Counter counter=new Counter();
-                counter.showSeconds(5,20);
+                counter.showSeconds(5,countUntil);
 
             }
         });
         Thread th7= new Thread(new Runnable() {
             public void run() {
                 Counter counter=new Counter();
-                counter.showSeconds(7,20);
+                counter.showSeconds(7,countUntil);
 
             }
         });

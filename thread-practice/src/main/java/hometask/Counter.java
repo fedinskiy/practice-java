@@ -29,13 +29,13 @@ public class Counter {
                     time=elapsedTime;
                     lock.notify();
 
-                    if(time>stopAfter)  return;
                     if(time != lastTime){
                         if ((time % frequency) == 0) {
                             System.out.println(frequency+" seconds count: " + time);
                            }
                         lastTime=time;
                     }
+                    if(time>=stopAfter)  return;
 
                 } catch (InterruptedException e) {
                     e.printStackTrace();
