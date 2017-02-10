@@ -5,7 +5,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by fedinskiy on 10.02.17.
@@ -19,7 +21,6 @@ public class Serializer {
         Element personInfo;
 
         fields = oclass.getDeclaredFields();
-
 
         person = document.createElement("Object");
         person.setAttribute("type", oclass.getName());
@@ -36,17 +37,18 @@ public class Serializer {
         return document;
     }
 
-    public static Object deserialize(Document document, Object object)
-            throws IllegalAccessException, NoSuchFieldException {
-        final Field[] fields;
-        final Class targetClass;
-        final Element person;
+    public static Object deserialize(Document document, final Class targetClass)
+            throws IllegalAccessException, NoSuchFieldException,
+            NoSuchMethodException, InvocationTargetException,
+            InstantiationException {
+        final Object object;
+        final Constructor constructor;
 
-        targetClass = object.getClass();
-        fields = targetClass.getDeclaredFields();
+
+        constructor = targetClass.getConstructor();
+        object = constructor.newInstance();
 
         final Node item = document.getChildNodes().item(0);
-        System.out.println(item.getAttributes().getNamedItem("type").getNodeValue());
         for (int i = 0; i < item.getChildNodes().getLength(); ++i) {
             final NamedNodeMap fieldParams = item.getChildNodes().item(i)
                     .getAttributes();
@@ -57,13 +59,7 @@ public class Serializer {
             field.set(object, castValue(
                     fieldParams.getNamedItem("type").getNodeValue(),
                     fieldParams.getNamedItem("value").getNodeValue()));
-
-            System.out.println();
         }
-
-        // System.out.println(document.getChildNodes().item(0).getNodeName());
-        // final NodeList nodeFields = person.getElementsByTagName("field");
-
         return object;
     }
 

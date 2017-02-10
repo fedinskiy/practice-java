@@ -12,12 +12,17 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by fedinskiy on 10.02.17.
  */
 public class main {
-    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, IllegalAccessException, TransformerException, NoSuchFieldException {
+    public static void main(String[] args)
+            throws ParserConfigurationException, IOException, SAXException,
+            IllegalAccessException, TransformerException, NoSuchFieldException,
+            NoSuchMethodException, InvocationTargetException,
+            InstantiationException {
         final String schemapath = args[0];
         final String fileWritePath = args[1];
         final String fileReadPath = args[2];
@@ -33,13 +38,18 @@ public class main {
         testRead(readDocument);
     }
 
-    private static void testRead(Document document) throws NoSuchFieldException, IllegalAccessException {
+    private static void testRead(Document document)
+            throws NoSuchFieldException, IllegalAccessException,
+            NoSuchMethodException, InstantiationException,
+            InvocationTargetException {
 
-        Person getted = (Person) Serializer.deserialize(document, new Person());
+        Person getted = (Person) Serializer.deserialize(document, Person.class);
         System.out.println(getted);
     }
 
-    private static void testWrite(String filepath, Document doc) throws ParserConfigurationException, IllegalAccessException, TransformerException, IOException, NoSuchFieldException {
+    private static void testWrite(String filepath, Document doc) throws
+            ParserConfigurationException, IllegalAccessException,
+            TransformerException, IOException, NoSuchFieldException {
         final File file;
         final Person person;
 
@@ -50,7 +60,8 @@ public class main {
         write(doc, file);
     }
 
-    public static void write(Document doc, File file) throws TransformerException, IOException {
+    public static void write(Document doc, File file)
+            throws TransformerException, IOException {
         DOMSource source = new DOMSource(doc);
         FileWriter writer = new FileWriter(file);
         StreamResult result = new StreamResult(writer);
