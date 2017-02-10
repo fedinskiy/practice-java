@@ -43,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Serializer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Serializer.java" pinned="false" current-in-tab="false">
         <entry file="file:///media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/serialization/Serializer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.java" pinned="false" current-in-tab="true">
         <entry file="file:///media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+            <state relative-caret-position="262">
+              <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -496,8 +496,8 @@
         <option value="/media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/resources/data2.xml" />
         <option value="/media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/helpers/DOMHelper.java" />
         <option value="/media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/resources/data3.xml" />
-        <option value="/media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/main.java" />
         <option value="/media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/serialization/Serializer.java" />
+        <option value="/media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/main.java" />
       </list>
     </option>
   </component>
@@ -683,7 +683,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="main" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="src/main/resources/person.xsd src/main/resources/data2.xml  src/main/resources/data3.xml" />
+      <option name="PROGRAM_PARAMETERS" value="src/main/resources/data2.xml  src/main/resources/data3.xml" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -903,12 +903,12 @@
       <option name="presentableId" value="Default" />
       <updated>1486717813784</updated>
       <workItem from="1486717817287" duration="2931000" />
-      <workItem from="1486726111025" duration="12418000" />
+      <workItem from="1486726111025" duration="12741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15349000" />
+    <option name="totallyTimeSpent" value="15672000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
@@ -1080,16 +1080,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="63" column="12" lean-forward="false" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/helpers/DOMHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -1104,6 +1094,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///media/60841ED2841EAA94/f/coding/shared/practice/practice-java/reflection/src/main/java/main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

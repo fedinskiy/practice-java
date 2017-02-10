@@ -23,9 +23,8 @@ public class main {
             IllegalAccessException, TransformerException, NoSuchFieldException,
             NoSuchMethodException, InvocationTargetException,
             InstantiationException {
-        final String schemapath = args[0];
-        final String fileWritePath = args[1];
-        final String fileReadPath = args[2];
+        final String fileWritePath = args[0];
+        final String fileReadPath = args[1];
         final DOMHelper DOMOperations;
         final Document readDocument;
         Document writeDocument;
