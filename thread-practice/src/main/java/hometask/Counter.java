@@ -4,7 +4,7 @@ package hometask;
  * Created by fedinskiy on 09.02.17.
  */
 public class Counter {
-    public static final Object lock = new Object();
+    private static final Object lock = new Object();
     private static volatile int elapsedTime = 0;
 
     public void countSeconds() {
