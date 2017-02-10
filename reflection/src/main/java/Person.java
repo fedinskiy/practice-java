@@ -1,7 +1,3 @@
-package persons;
-
-import java.util.DoubleSummaryStatistics;
-
 /**
  * Created by fedinskiy on 10.02.17.
  */
@@ -9,6 +5,16 @@ public class Person {
     private String name;
     private Integer age;
     private Double salary;
+
+    public Person() {
+
+    }
+
+    public Person(String name, Integer age, Double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
 
     public String getName() {
         return name;
@@ -33,4 +39,14 @@ public class Person {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                '}';
+    }
+
 }

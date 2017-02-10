@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Object
+        type="Person"><field id="name" type="String" value="Kyle Reeze"/><field
+        id="age" type="Integer" value="30"/><field id="salary" type="Double"
+                                                   value="100.5"/></Object>
