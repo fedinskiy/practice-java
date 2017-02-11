@@ -22,7 +22,7 @@ public class main {
             throws ParserConfigurationException, IOException, SAXException,
             IllegalAccessException, TransformerException, NoSuchFieldException,
             NoSuchMethodException, InvocationTargetException,
-            InstantiationException {
+            InstantiationException, ClassNotFoundException {
         final String fileWritePath = args[0];
         final String fileReadPath = args[1];
         final DOMHelper DOMOperations;
@@ -33,14 +33,18 @@ public class main {
 
         writeDocument = DOMOperations.createDocument();
         testWrite(fileWritePath, writeDocument);
-        readDocument = DOMOperations.readDocument(fileReadPath);
-        testRead(readDocument);
+        try {
+            readDocument = DOMOperations.readDocument(fileReadPath);
+            testRead(readDocument);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 
     private static void testRead(Document document)
             throws NoSuchFieldException, IllegalAccessException,
             NoSuchMethodException, InstantiationException,
-            InvocationTargetException {
+            InvocationTargetException, ClassNotFoundException {
 
         Person getted = (Person) Serializer.deserialize(document, Person.class);
         System.out.println(getted);
@@ -53,7 +57,7 @@ public class main {
         final Person person;
 
         file = new File(filepath);
-        person = new Person("Jonhn Connor", 20, 7.5);
+        person = new Person("John Connor", 20, 7.5);
 
         doc = Serializer.serialize(person, doc);
         write(doc, file);
