@@ -6,10 +6,6 @@ public class Person {
     private Integer age;
     private Double salary;
 
-    public Person() {
-
-    }
-
     public Person(String name, Integer age, Double salary) {
         this.name = name;
         this.age = age;

@@ -43,10 +43,11 @@ public class Serializer {
             InstantiationException {
         final Object object;
         final Constructor constructor;
+        final Object[] nullArr;
 
-
-        constructor = targetClass.getConstructor();
-        object = constructor.newInstance();
+        constructor = targetClass.getConstructors()[0];
+        nullArr = new Object[constructor.getParameterCount()];
+        object = constructor.newInstance(nullArr);
 
         final Node item = document.getChildNodes().item(0);
         for (int i = 0; i < item.getChildNodes().getLength(); ++i) {
