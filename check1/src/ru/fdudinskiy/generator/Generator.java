@@ -29,6 +29,11 @@ public class Generator implements Runnable {
             }
             synchronized (numberCount) {
                 needToStop = stopFlag;
+                try {
+                    numberCount.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 int newNumber = rand.nextInt(range);
                 System.out.println("nn: " + newNumber);
 
@@ -36,7 +41,7 @@ public class Generator implements Runnable {
                 numberCount.notifyAll();
             }
 
-        } while (!needToStop);
+        } while (!stopFlag);
     }
 
     public void addNumber(int number, HashMap<Integer, Integer> numberCount) {
