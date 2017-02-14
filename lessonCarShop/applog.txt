@@ -1,0 +1,75 @@
+ERROR   2017-02-14 10:44:05,516 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:44:05,517 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:44:36,561 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:44:36,562 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:45:37,488 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:45:37,490 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:46:08,547 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:46:08,549 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:51:36,417 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:51:36,418 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:52:20,569 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:52:20,571 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 10:52:30,082 [main] Main  - store created
+ERROR   2017-02-14 10:52:30,089 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:52:30,089 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:52:47,279 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:52:47,281 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 10:53:00,882 [main] Main  - store created
+ERROR   2017-02-14 10:53:00,889 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:53:00,889 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:53:50,070 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:53:50,072 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 10:54:12,111 [main] Main  - store created
+ERROR   2017-02-14 10:54:12,121 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 10:54:12,121 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 11:01:07,762 [main] Main  - store created
+ERROR   2017-02-14 11:01:07,768 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 11:01:07,768 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 11:34:17,544 [main] Main  - store created
+ERROR   2017-02-14 11:34:17,553 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 11:34:17,553 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 11:34:34,455 [main] Main  - store created
+ERROR   2017-02-14 11:34:34,471 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 11:34:34,472 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 11:51:17,261 [main] Main  - store created
+TRACE   2017-02-14 11:54:55,863 [main] Main  - store created
+TRACE   2017-02-14 11:56:34,628 [main] Main  - store created
+TRACE   2017-02-14 11:57:57,323 [main] Main  - store created
+TRACE   2017-02-14 11:59:47,286 [main] Main  - store created
+TRACE   2017-02-14 12:00:15,598 [main] Main  - store created
+TRACE   2017-02-14 12:01:37,005 [main] Main  - store created
+TRACE   2017-02-14 12:04:11,623 [main] Main  - store created
+TRACE   2017-02-14 12:04:21,346 [main] Main  - store created
+TRACE   2017-02-14 12:05:50,785 [main] Main  - store created
+TRACE   2017-02-14 12:06:23,436 [main] Main  - store created
+ERROR   2017-02-14 12:06:23,446 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:06:23,446 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:06:47,320 [main] Main  - store created
+ERROR   2017-02-14 12:06:47,332 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:06:47,332 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:07:58,291 [main] Main  - store created
+ERROR   2017-02-14 12:07:58,300 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:07:58,300 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:29:13,925 [main] Main  - store created
+ERROR   2017-02-14 12:29:15,230 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:29:15,230 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:39:33,558 [main] Main  - store created
+ERROR   2017-02-14 12:39:33,567 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:39:33,567 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:40:14,639 [main] Main  - store created
+ERROR   2017-02-14 12:40:15,934 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:40:15,934 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:42:13,731 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:42:13,732 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:45:43,186 [main] Main  - store created
+TRACE   2017-02-14 12:46:20,679 [main] Main  - store created
+TRACE   2017-02-14 12:47:01,764 [main] Main  - I have Created store
+TRACE   2017-02-14 12:47:35,190 [main] Main  - I have Created store
+TRACE   2017-02-14 12:48:19,262 [main] Main  - I have Created store
+TRACE   2017-02-14 12:48:57,480 [main] Main  - I have Created store
+ERROR   2017-02-14 12:48:58,817 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:48:58,817 [main] datamanager.DataManager  - something
+TRACE   2017-02-14 12:49:32,781 [main] Main  - I have Created store
+ERROR   2017-02-14 12:49:33,460 [main] datamanager.DataManager  - something
+ERROR   2017-02-14 12:49:33,461 [main] datamanager.DataManager  - something
