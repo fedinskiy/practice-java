@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/classloader.iml" filepath="$PROJECT_DIR$/classloader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/permissions.iml" filepath="$PROJECT_DIR$/permissions.iml" />
     </modules>
   </component>
 </project>
