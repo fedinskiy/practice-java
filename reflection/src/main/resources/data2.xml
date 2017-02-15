@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Object type="Person"><field id="name" type="String" value="John Connor"/><field id="age" type="Integer" value="20"/><field id="salary" type="Double" value="7.5"/></Object>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Object type="Animal"><field id="age" type="int" value="0"/><field id="species" type="String" value="Hydra"/></Object>

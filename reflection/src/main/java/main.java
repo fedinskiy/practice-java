@@ -1,3 +1,4 @@
+import classloader.GitHubClasLoader;
 import helpers.DOMHelper;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -52,14 +53,20 @@ public class main {
 
     private static void testWrite(String filepath, Document doc) throws
             ParserConfigurationException, IllegalAccessException,
-            TransformerException, IOException, NoSuchFieldException {
+            TransformerException, IOException, NoSuchFieldException, ClassNotFoundException, NoSuchMethodException, InstantiationException {
         final File file;
         final Person person;
 
-        file = new File(filepath);
-        person = new Person("John Connor", 20, 7.5);
+        GitHubClasLoader loader=new GitHubClasLoader(ClassLoader
+                .getSystemClassLoader());
 
-        doc = Serializer.serialize(person, doc);
+        Class<?> hereBeAnimal=loader.loadClass("Animal");
+        Object iAmAnimal=hereBeAnimal.newInstance();
+
+        file = new File(filepath);
+       // person = new Person("John Connor", 20, 7.5);
+
+        doc = Serializer.serialize(iAmAnimal, doc);
         write(doc, file);
     }
 
