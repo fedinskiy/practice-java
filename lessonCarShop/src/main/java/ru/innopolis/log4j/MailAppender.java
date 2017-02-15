@@ -21,6 +21,7 @@ import javax.mail.internet.MimeMessage;
 public class MailAppender extends AppenderSkeleton {
     private String text="";
     private String topic="";
+
     @Override
     protected void append(LoggingEvent  event) {
         MailLayout layout= (MailLayout) this.getLayout();
@@ -39,12 +40,10 @@ public class MailAppender extends AppenderSkeleton {
         }
     }
 
-
     @Override
     public boolean requiresLayout() {
         return false;
     }
-
 
     public static void sendMail(String topic,String text) throws IOException {
         File passfile= new File("/home/fedinskiy/myfolder/pass");

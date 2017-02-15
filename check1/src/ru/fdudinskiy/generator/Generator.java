@@ -22,25 +22,34 @@ public class Generator implements Runnable {
     public void run() {
         boolean needToStop;
         do {
+            System.out.println("Generator run");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+	        System.out.println("Generator 2");
             synchronized (numberCount) {
+	            System.out.println("Generator 3");
+           //     try {
+                    //numberCount.wait();
+	                System.out.println("Generator 4");
+               // } catch (InterruptedException e) {
+               //     e.printStackTrace();
+            //    }
                 needToStop = stopFlag;
-                try {
-                    numberCount.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 int newNumber = rand.nextInt(range);
                 System.out.println("nn: " + newNumber);
 
                 addNumber(newNumber, numberCount);
-                numberCount.notifyAll();
+                numberCount.notify();
+	            try {
+		            numberCount.wait();
+	            } catch (InterruptedException e) {
+		            e.printStackTrace();
+	            }
             }
-
+//            numberCount.notify();
         } while (!stopFlag);
     }
 

@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class Consumer implements Runnable {
     private final HashMap<Integer, Integer> numberCount;
-    volatile Boolean stopFlag;
+    private volatile Boolean stopFlag;
 
     public Consumer(HashMap<Integer, Integer> numberCount, Boolean stopFlag) {
         this.numberCount = numberCount;
@@ -18,7 +18,7 @@ public class Consumer implements Runnable {
     public void run() {
         boolean needToStop;
         do {
-
+            System.out.println("Consumer run");
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
@@ -35,12 +35,12 @@ public class Consumer implements Runnable {
                 if (!needToStop) {
                     System.out.println("создано чисел:" + numberCount.size());
                 } else {
-                    numberCount.notifyAll();
+                    numberCount.notify();
                     return;
                 }
-                numberCount.notifyAll();
+                numberCount.notify();
             }
-        }while(true);
+        }while(!stopFlag);
     }
 
 
