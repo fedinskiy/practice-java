@@ -69,7 +69,6 @@ public class GitHubClasLoader extends ClassLoader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         result = defineClass(className, classByte, 0, classByte.length, null);
         classes.put(className, result);
         return result;
