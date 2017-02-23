@@ -10,15 +10,19 @@
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>controllers.LoginServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>Registration</servlet-name>
         <servlet-class>controllers.RegistrationServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>List</servlet-name>
         <servlet-class>controllers.ListServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>List</servlet-name>
         <url-pattern>/list</url-pattern>

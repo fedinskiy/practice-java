@@ -14,4 +14,11 @@ public class UserService {
 			return false;
 		}
 	}
+	public static boolean RegisterUser(String login, String password) throws UserDAOException {
+		if(UserDAO.registrationUser(login, password).getIdUser() != 0){
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

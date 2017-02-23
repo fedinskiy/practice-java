@@ -14,15 +14,24 @@
 <body>
 <div>
     <h1>Регистрация</h1>
-
-    <a href="/registration" title="Регистрация"></a>
-
-    <form action="/registration" method="post">
-        <label for="login">Login:</label>
-        <input type="text" name="login" id="login" value="" placeholder="Input">
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" value="" placeholder="Input">
-        <input type="submit" value="Submit">
+    <form action="registration" method="post">
+        <table>
+            <tr><td>
+                <label for="login">Choose name for registration:</label>
+            </td></tr>
+            <tr><td>
+          <input type="text" name="login" id="login" value="" placeholder="Input">
+            </td></tr>
+            <tr><td>
+                <label for="password">Password:</label>
+            </td></tr>
+            <tr><td>
+                <input type="password" name="password" id="password" value="" placeholder="Input">
+            </td></tr>
+            <tr><td>
+          <input type="submit" value="Submit">
+            </td></tr>
+        </table>
     </form>
 </div>
 </body>

@@ -10,6 +10,7 @@ public class Student {
 	private long id;
 	private String name;
 	private LocalDate birthdate;
+	private String sex;
 	
 	public Student() {
 
@@ -40,5 +41,13 @@ public class Student {
 	}
 	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate.toLocalDate();
+	}
+	
+	public String getSex() {
+		return sex;
+	}
+	
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 }

@@ -4,7 +4,6 @@ import common.exception.StudentDAOException;
 import models.dao.StudentDAO;
 import models.pojo.Student;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,5 +17,17 @@ public class StudentService {
 		} catch (StudentDAOException e) {
 			return null;
 		}
+	}
+	
+	public static boolean deleteStudents(String[] chosen) {
+		if (null==chosen) return false;
+		if (chosen.length==0) return false;
+		
+		try {
+			StudentDAO.deleteStudentsById(chosen);
+		} catch (StudentDAOException e) {
+			return false;
+		}
+		return true;
 	}
 }

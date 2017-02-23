@@ -19,7 +19,7 @@ public class UserDAO {
 	private static Logger logger = LogManager.getLogger(UserDAO.class);
 	private static final String SQL_FIND_USER = "SELECT * FROM main.users where login=? and password=?";
 	private static final String SQL_ADD_USER = "INSERT INTO main.users( login, password, role)" +
-			"VALUES ( ?, ?, ?)";
+			"VALUES ( ?, ?, ?) RETURNING id ";
 	
 	public static User getUserByLoginAndPassword(String login, String password) throws UserDAOException {
 		User user = new User();
@@ -45,7 +45,7 @@ public class UserDAO {
 		return user;
 	}
 	
-	public static boolean registrationUser(String login, String password) {
+	public static User registrationUser(String login, String password) {
 		User user = new User();
 		try (Connection conn = Connector.getConnection()) {
 			logger.trace("regging User");
@@ -55,13 +55,13 @@ public class UserDAO {
 			ps.setString(3, "user");
 			final ResultSet resultSet = ps.executeQuery();
 			if (resultSet.next()) {
-				
+				user.setIdUser(resultSet.getInt("id"));
 			} else {
 				logger.debug(login + " " + password + " not found");
 			}
 		} catch (SQLException e) {
 			logger.error(e);
 		}
-		return true;
+		return user;
 	}
 }

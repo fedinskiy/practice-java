@@ -13,7 +13,8 @@
 </head>
 <body>
 <div>
-    <a href="/registration" >Регистрация</a>
+    <h1>Вход в систему</h1>
+    <a href="registration" >Регистрация</a>
     <form action="/students/login" method="post">
         <label for="login">Login:</label>
         <input type="text" name="login" id="login" value="" placeholder="Input">

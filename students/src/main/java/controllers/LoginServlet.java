@@ -20,7 +20,6 @@ public class LoginServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("forward");
 		logger.trace("forward");
 		req.getRequestDispatcher(loginPath).forward(req,resp);
 	}
@@ -28,6 +27,7 @@ public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("getting data");
+		logger.trace("gettingData");
 		String login = req.getParameter("login");
 		String password = req.getParameter("password");
 		

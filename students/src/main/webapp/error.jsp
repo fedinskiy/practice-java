@@ -11,6 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-
+<div>
+    <h1>Where was some kind of unexpected error :(</h1>
+</div>
 </body>
 </html>
