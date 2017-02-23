@@ -12,3 +12,19 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+settings.xml
+#Cache of project
+.gradletasknamecache
+.idea
+.idea/
+
+#binaties & working diretories
+*.class
+target/
+results/
+
+# settings without password
+hibernate.cfg.xml
+!template.hibernate.cfg.xml
+
