@@ -5,21 +5,26 @@
          version="3.1">
     <display-name>Student service</display-name>
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>/students/login.jsp</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>controllers.LoginServlet</servlet-class>
+        <servlet-class>students.controllers.LoginServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>Registration</servlet-name>
-        <servlet-class>controllers.RegistrationServlet</servlet-class>
+        <servlet-class>students.controllers.RegistrationServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>List</servlet-name>
-        <servlet-class>controllers.ListServlet</servlet-class>
+        <servlet-class>students.controllers.ListServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Lections</servlet-name>
+        <servlet-class>students.controllers.LectionServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
@@ -29,7 +34,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Edit</servlet-name>
-        <servlet-class>controllers.EditServlet</servlet-class>
+        <servlet-class>students.controllers.EditServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
@@ -55,4 +60,22 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/students/index.jsp</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Lections</servlet-name>
+        <url-pattern>/lections</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>students.controllers.listeners.ApplicationLoadListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>students.controllers.listeners.SessionListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/beans.xml </param-value>
+    </context-param>
+
 </web-app>

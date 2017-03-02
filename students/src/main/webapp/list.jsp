@@ -13,6 +13,7 @@
 </head>
 <body>
 <h1>LIST</h1>
+<a href="lections" >Лекции</a>
 <form action="list" method="post">
     <table border="1">
         <c:forEach items="${studentList}" var="studentItem">

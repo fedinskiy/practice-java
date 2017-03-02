@@ -25,7 +25,6 @@ public class Serializer {
         final Class oclass = obj.getClass();
         final Element person;
         Element personInfo;
-
         fields = oclass.getDeclaredFields();
 
         person = document.createElement("Object");

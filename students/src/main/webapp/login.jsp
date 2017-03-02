@@ -17,7 +17,7 @@
     <a href="registration" >Регистрация</a>
     <form action="/students/login" method="post">
         <label for="login">Login:</label>
-        <input type="text" name="login" id="login" value="" placeholder="Input">
+        <input type="text" name="login" id="login" value="" placeholder="Input" autofocus>
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" value="" placeholder="Input">
         <input type="submit" value="Submit">
