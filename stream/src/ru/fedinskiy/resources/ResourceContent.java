@@ -85,11 +85,11 @@ public abstract class ResourceContent {
 	
 //	/**
 //	 * @param store
-//	 * @throws WordAlreаdyAddedException
+//	 * @throws WordAlreadyAddedException
 //	 * @implSpec Проверяет все слова, прочитанные из ресурса,
 //	 * на наличие в данном хранилище.
 //	 */
-//	public boolean addNewWordsToStore(WordsStore store) throws WordAlreаdyAddedException {
+//	public boolean addNewWordsToStore(WordsStore store) throws WordAlreadyAddedException {
 //		for (String word : this.numberArray) {
 //			System.out.println("пишем слово " + word + " из источника " + this
 //					.resourceName);

@@ -4,12 +4,12 @@ package ru.fedinskiy.exceptions;
 /**
  * Created by fedinskiy on 07.02.17.
  */
-public class WordAlreаdyAddedException extends BasicCallableException {
+public class WordAlreadyAddedException extends BasicCallableException {
 	
 	/**
 	 * @param word — слово, которое уже было добавлено
 	 */
-	public WordAlreаdyAddedException( String word) {
+	public WordAlreadyAddedException(String word) {
 		super("Слово '" + word + "' уже было добавлено");
 	}
 }

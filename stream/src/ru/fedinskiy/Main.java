@@ -2,7 +2,6 @@ package ru.fedinskiy;
 
 import ru.fedinskiy.exceptions.IllegalSymbolsException;
 import ru.fedinskiy.exceptions.WrongResourceException;
-import ru.fedinskiy.math.TalkativeSummator;
 import ru.fedinskiy.resources.ResourceContentFactory;
 
 import java.io.IOException;
