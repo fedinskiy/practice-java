@@ -8,8 +8,8 @@
   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <annotation-driven/>
     <context:spring-configured/>
-    <context:component-scan base-package="students"/>
+    <context:component-scan base-package="ru.fedinskiy.students"/>
     <context:annotation-config/>
-    <beans:bean id="userDao" class="students.models.dao.UserDAO"></beans:bean>
-    <beans:bean id="userService" class="students.services.UserService"></beans:bean>
+    <beans:bean id="userDao" class="ru.fedinskiy.students.models.dao.UserDAO"></beans:bean>
+    <beans:bean id="userService" class="ru.fedinskiy.students.services.UserService"></beans:bean>
 </beans:beans>

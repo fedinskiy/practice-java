@@ -12,7 +12,7 @@
     <title>lection</title>
 </head>
 <body>
-<form action="lections" method="post">
+<form action="lections" method="post"  acceptCharset="UTF-8">
     <table border="1">
             <tr>
                 <td><input type="text" name="name" id = "name" value="<c:out value="${lection.name}"></c:out>" autofocus /></td>

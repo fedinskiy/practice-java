@@ -20,6 +20,7 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: '4.3.5.RELEASE'
     compile group: 'org.springframework', name: 'spring-web', version: '4.3.5.RELEASE'
     compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.3.RELEASE'
+    
     compile 'org.springframework:spring-aspects:4.3.7.RELEASE'
 
     compile group: 'org.springframework.security', name: 'spring-security-web', version: '4.+'

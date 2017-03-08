@@ -20,7 +20,7 @@
                 <td><c:out value="${lection.name}"></c:out></td>
                 <td><c:out value="${lection.date}"></c:out></td>
                 <td><a href="lections?operation=edit&id=<c:out value="${lection.id}"></c:out>"> редактировать</a> </td>
-                <td> <input type="checkbox" name="chosen" id="chosen" value=<c:out value="${lection.groupId}"></c:out>></td>
+                <td> <input type="checkbox" name="chosen" id="chosen" value=<c:out value="${lection.id}"></c:out>></td>
             </tr>
         </c:forEach>
     </table>
