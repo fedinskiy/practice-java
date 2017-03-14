@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: activemq-all-5.4.2.jar
+Main-Class: Application
+

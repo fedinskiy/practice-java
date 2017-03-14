@@ -11,7 +11,7 @@ public class Consumer implements Runnable{
 	
 	@Override
 	public void run() {
-		ActiveMQConnectionFactory factory= new ActiveMQConnectionFactory("vm://localhost");
+		ActiveMQConnectionFactory factory= new ActiveMQConnectionFactory("tcp://localhost:61616");
 		Connection connection= null;
 		try {
 			connection = factory.createConnection();
