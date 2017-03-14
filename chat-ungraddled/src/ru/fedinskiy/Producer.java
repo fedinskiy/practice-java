@@ -4,51 +4,64 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
 import java.util.Scanner;
-import java.util.concurrent.atomic.AtomicBoolean;
+
+import static ru.fedinskiy.MessageConstants.getConnectionName;
+import static ru.fedinskiy.MessageConstants.getConnectionSocket;
 
 /**
  * Created by fedinskiy on 14.03.17.
  */
 public class Producer implements Runnable {
-	private String nickname;
-	private AtomicBoolean stopChat;
+	private ChatPerson sender;
 	
-	public Producer(String nickname, AtomicBoolean stopChat) {
-		this.nickname = nickname;
-		this.stopChat=stopChat;
+	public Producer(ChatPerson sender) {
+		this.sender = sender;
+	}
+	
+	public String nickname() {
+		return sender.getNickname();
 	}
 	
 	@Override
 	public void run() {
-		ActiveMQConnectionFactory factory= new ActiveMQConnectionFactory("tcp://localhost:61616");
+		ActiveMQConnectionFactory factory= new ActiveMQConnectionFactory(getConnectionSocket());
 		try {
-			String message="";
-			Scanner scanner = new Scanner(System.in);
-			
-			Connection connection=factory.createConnection();
+			final Connection connection=factory.createConnection();
 			connection.start();
-			Session session=connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			Destination destination=session.createTopic("Dest");
-			MessageProducer producer=session.createProducer(destination);
+			Session session=connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
+			final Topic destination= session.createTopic(getConnectionName());
+			final MessageProducer producer=session.createProducer(destination);
+			final Scanner scanner = new Scanner(System.in);
 			producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
 			
-			producer.send(session.createTextMessage(nickname+" is joined chat"));
+			System.out.println("Your id is "+sender.getId());
+			sendTextMessage(nickname()+" is joined chat",session,producer);
 			
-			message=scanner.nextLine();
+			String message=scanner.nextLine();
 			while(!message.equals("exit")) {
-				TextMessage textMessage = session.createTextMessage(nickname+": "+message);
-				producer.send(textMessage);
+				sendTextMessage(nickname()+": "+message,session,producer);
+				System.out.println("Сообщение "+message+" получено");
 				message=scanner.nextLine();
 			}
-			synchronized(stopChat) {
-				stopChat.set(true);
+			sendTextMessage(nickname()+" покинул чат",session,producer);
+			
+			synchronized(sender) {
+				sender.getStopChat().set(true);
 			}
 			
+			producer.close();
 			session.close();
 			connection.close();
 			
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void sendTextMessage(String text, Session session,MessageProducer producer ) throws JMSException {
+		final TextMessage textMessage = session.createTextMessage(text);
+		
+		textMessage.setIntProperty(MessageConstants.getSenderId(),sender.getId());
+		producer.send(textMessage);
 	}
 }
