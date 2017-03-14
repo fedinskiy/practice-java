@@ -11,6 +11,9 @@ import ru.fedinskiy.students.controllers.servlets.LoginServlet;
 import ru.fedinskiy.students.exception.UserDAOException;
 import ru.fedinskiy.students.services.UserService;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+
 /**
  * Created by fedinskiy on 06.03.17.
  */
@@ -25,10 +28,12 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String authorization(@RequestParam(name = "login") String login, @RequestParam(name = "password") String password){
 		try {
 			if (userService.authorize(login, password)) {
+				HashMap hm = new HashMap();
+				hm.put();
 				logger.trace("authorized");
 				return ControllerUtils.redirectTo("list");
 			} else {

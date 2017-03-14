@@ -13,6 +13,4 @@
     <context:spring-configured/>
     <context:component-scan base-package="ru.fedinskiy.students"/>
     <context:annotation-config/>
-    <beans:bean id="userDao" class="ru.fedinskiy.students.models.dao.UserDAO"></beans:bean>
-    <beans:bean id="userService" class="ru.fedinskiy.students.services.UserService"></beans:bean>
 </beans:beans>

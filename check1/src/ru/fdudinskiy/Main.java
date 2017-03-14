@@ -3,10 +3,12 @@ package ru.fdudinskiy;
 import ru.fdudinskiy.consumer.Consumer;
 import ru.fdudinskiy.generator.Generator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 
 public class Main {
-	
 	public static void main(String[] args) {
 		HashMap<Integer, Integer> numberCounter = new HashMap<Integer, Integer>(100);
 		Boolean stopFlag = false;

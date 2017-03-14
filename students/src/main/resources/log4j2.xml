@@ -11,8 +11,11 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="trace">
+        <Root level="TRACE">
             <AppenderRef ref="STDOUT" level="TRACE"/>
+        </Root>
+        <Root level="DEBUG">
+            <AppenderRef ref="STDOUT" level="DEBUG"/>
         </Root>
     </Loggers>
 </Configuration>

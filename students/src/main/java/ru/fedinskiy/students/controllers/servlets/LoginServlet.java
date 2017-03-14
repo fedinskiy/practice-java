@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 				resp.sendRedirect("list");
 			} else {
 				logger.trace("not authorized");
-				resp.sendRedirect("/ru/fedinskiy/students/login");
+				resp.sendRedirect("/login");
 			}
 		} catch (UserDAOException e) {
 			logger.error(e);

@@ -7,6 +7,7 @@
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Login</title>
@@ -15,11 +16,12 @@
 <div>
     <h1>Вход в систему</h1>
     <a href="registration" >Регистрация</a>
-    <form action="/students/login" method="post">
+    <c:url value="/j_spring_security_check" var="loginUrl"/>
+    <form action="${loginUrl}" method="post">
         <label for="login">Login:</label>
         <input type="text" name="login" id="login" value="" placeholder="Input" autofocus>
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" value="" placeholder="Input">
+        <input type="password" name="password" id="password" required value="" placeholder="Input">
         <input type="submit" value="Submit">
     </form>
 </div>

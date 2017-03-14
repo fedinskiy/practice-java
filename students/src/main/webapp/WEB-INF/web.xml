@@ -8,7 +8,10 @@
     <!-- Создает Spring Container, доступный всем сервлетам и фильтрам -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+        <param-value>
+            /WEB-INF/security-context.xml
+            /WEB-INF/dispatcher-servlet.xml
+        </param-value>
     </context-param>
     <!-- Обрабатывает все запросы. Центральное понятие-->
     <servlet>
@@ -25,9 +28,6 @@
     </listener>
     <listener>
         <listener-class>ru.fedinskiy.students.controllers.listeners.SessionListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
     <servlet-mapping>
@@ -49,14 +49,29 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encoding-filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 
     <locale-encoding-mapping-list>
         <locale-encoding-mapping>
-            <locale>pt-BR</locale>
+            <locale>ru-RU</locale>
             <encoding>UTF-8</encoding>
         </locale-encoding-mapping>
         <locale-encoding-mapping>
-            <locale>pt</locale>
+            <locale>ru</locale>
             <encoding>UTF-8</encoding>
         </locale-encoding-mapping>
         <locale-encoding-mapping>
@@ -64,10 +79,4 @@
             <encoding>UTF-8</encoding>
         </locale-encoding-mapping>
     </locale-encoding-mapping-list>
-
-    <filter-mapping>
-        <filter-name>encoding-filter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
 </web-app>
