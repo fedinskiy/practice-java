@@ -25,4 +25,5 @@ dependencies {
     compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.+'
     compile group: 'org.springframework.security', name: 'spring-security-config', version: '4.+'
     compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: '4.+'
+    compile 'org.hibernate:hibernate-core:5.2.8.Final'
 }

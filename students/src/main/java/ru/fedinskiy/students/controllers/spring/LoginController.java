@@ -32,8 +32,6 @@ public class LoginController {
 	public String authorization(@RequestParam(name = "login") String login, @RequestParam(name = "password") String password){
 		try {
 			if (userService.authorize(login, password)) {
-				HashMap hm = new HashMap();
-				hm.put();
 				logger.trace("authorized");
 				return ControllerUtils.redirectTo("list");
 			} else {

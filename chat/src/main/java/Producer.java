@@ -1,6 +1,7 @@
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 import javax.jms.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Producer implements Runnable {
 	public Producer(String nickname) {
 		this.nickname = nickname;
 	}
-	
+
 	@Override
 	public void run() {
 		ActiveMQConnectionFactory factory= new ActiveMQConnectionFactory("tcp://localhost:61616");
