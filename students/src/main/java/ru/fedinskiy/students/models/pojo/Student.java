@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by fedinskiy on 23.02.17.
  */
 public class Student {
-	private long id;
+	private int id;
 	private String name;
 	private LocalDate birthdate;
 	private String sex;
@@ -17,11 +17,11 @@ public class Student {
 
 	}
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

@@ -15,7 +15,9 @@ import ru.fedinskiy.students.models.pojo.Student;
 import ru.fedinskiy.students.services.StudentDAOService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by fedinskiy on 06.03.17.
@@ -40,28 +42,24 @@ public class StudentsController {
 			student.setBirthdate(studentsEntity.getBirthdate());
 			student.setName(studentsEntity.getName());
 			student.setSex(studentsEntity.getSex());
-			logger.info(student.toString());
+			student.setId(studentsEntity.getId());
 			list.add(student);
 		}
 		
-//		List<Student> list = studentDAOService.getAllStudents();
 		model.addAttribute("studentList", list);
 		return "list";
 	}
 	@RequestMapping(value = "/list", method = RequestMethod.POST,params ={"operation=delete"} )
 	public String deleteStudent(Model model, @RequestParam(value = "chosen") String [] chosen){
 		System.out.println(chosen[0]);
-		studentDAOService.deleteStudents(chosen);
-		List<Student> list = studentDAOService.getAllStudents();
-		model.addAttribute("studentList", list);
-		return ControllerUtils.redirectTo("list");
-	}
-	@RequestMapping(value = "/list", method = RequestMethod.POST,params ={"operation=add"} )
-	public String addStudent(){
-		return ControllerUtils.redirectTo("list");
-	}
-	@RequestMapping(value = "/list", method = RequestMethod.POST,params ={"operation=edit"} )
-	public String editStudent(){
+		final List<Integer> ids = Arrays.stream(chosen).map(
+				(String string) -> {
+					return Integer.parseInt(string);
+				}
+		).collect(Collectors.toList());
+		studentService.deleteStudents(ids);
+//		List<Student> list = studentDAOService.getAllStudents();
+//		model.addAttribute("studentList", list);
 		return ControllerUtils.redirectTo("list");
 	}
 }

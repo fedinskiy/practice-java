@@ -10,4 +10,5 @@ import java.util.List;
 public interface StudentService {
 	List<StudentsEntity> findAll();
 	List<StudentsEntity> findByname(String name);
+	void deleteStudents(List<Integer> chosen);
 }

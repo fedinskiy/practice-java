@@ -31,4 +31,10 @@ public class StudentServiceImpl implements StudentService {
 	public List<StudentsEntity> findByname(String name) {
 		return repository.findByname(name);
 	}
+
+	@Override
+	public void deleteStudents(List<Integer> chosen) {
+		final Iterable<StudentsEntity> chosenStudents = repository.findAll(chosen);
+		repository.delete(chosenStudents);
+	}
 }
