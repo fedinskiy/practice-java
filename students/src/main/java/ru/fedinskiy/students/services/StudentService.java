@@ -37,4 +37,8 @@ public class StudentService {
 		}
 		return true;
 	}
+	
+	public Student getStudentById(int id){
+		return studentDAO.getStudentById(id);
+	}
 }

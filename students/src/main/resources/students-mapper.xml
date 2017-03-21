@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ru.fedinskiy.students.models.dao.StudentsMapper">
+       <resultMap id="student" type="ru.fedinskiy.students.models.pojo.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+    <select id="getStudentById" parameterType="java.lang.Integer" parameterMap="student">
+        select id, name from main.students where id = #{id}
+    </select>
+</mapper>

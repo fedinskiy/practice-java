@@ -5,6 +5,8 @@ import ru.fedinskiy.students.exception.UserDAOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import ru.fedinskiy.students.models.pojo.Student;
+import ru.fedinskiy.students.services.StudentService;
 import ru.fedinskiy.students.services.UserService;
 
 import javax.servlet.ServletConfig;

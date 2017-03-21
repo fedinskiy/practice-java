@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.fedinskiy.students.controllers.servlets.LoginServlet;
 import ru.fedinskiy.students.exception.UserDAOException;
+import ru.fedinskiy.students.models.pojo.Student;
+import ru.fedinskiy.students.services.StudentService;
 import ru.fedinskiy.students.services.UserService;
 
 import java.util.HashMap;
@@ -21,10 +23,17 @@ import java.util.LinkedList;
 public class LoginController {
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private StudentService studentService;
+	
 	private static Logger logger = LogManager.getLogger(LoginServlet.class);
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showLoginPage(){
+		
+		final Student studentById = studentService.getStudentById(1);
+		logger.info(studentById.getName());
 		return "login";
 	}
 	
