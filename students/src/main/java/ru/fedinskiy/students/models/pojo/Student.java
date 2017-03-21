@@ -1,7 +1,8 @@
 package ru.fedinskiy.students.models.pojo;
 
-import java.sql.Date;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 /**
  * Created by fedinskiy on 23.02.17.
@@ -36,12 +37,20 @@ public class Student {
 		return birthdate;
 	}
 	
+	public void setBirthdate(java.sql.Date birthdate) {
+		
+		this.birthdate = birthdate.toLocalDate();
+	}
+	
+	public void setBirthdate(Date birthdate) {
+		
+		this.birthdate = birthdate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+	}
+	
 	public void setBirthdate(LocalDate birthdate) {
 		this.birthdate = birthdate;
 	}
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate.toLocalDate();
-	}
+
 	
 	public String getSex() {
 		return sex;
@@ -49,5 +58,15 @@ public class Student {
 	
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", birthdate=" + birthdate +
+				", sex='" + sex + '\'' +
+				'}';
 	}
 }

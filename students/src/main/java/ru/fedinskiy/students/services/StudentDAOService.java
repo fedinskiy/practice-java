@@ -13,11 +13,10 @@ import java.util.List;
  * Created by fedinskiy on 23.02.17.
  */
 @Service
-public class StudentService {
+public class StudentDAOService {
 	
 	@Autowired
 	private StudentDAO studentDAO;
-	
 	public List<Student> getAllStudents(){
 		try {
 			return studentDAO.getAllStudents();
